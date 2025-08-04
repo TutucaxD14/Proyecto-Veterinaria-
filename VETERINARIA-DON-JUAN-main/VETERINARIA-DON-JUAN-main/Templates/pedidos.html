@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='pedidos.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Menú Clientes - Veterinaria Don Juan</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='imagenes/Logo.png') }}">
+  </head>
+
+<body>
+
+  <header>    
+    <img src="{{ url_for('static', filename='imagenes/Logo.png') }}"class="logo-derecha">
+  </header>
+  
+  <h1>Menú Pedidos</h1>
+
+  <div class="form-section">
+    <form action="{{ url_for('agregar_pedidos') }}" method="POST">
+      <label for="id_cliente">ID Cliente:</label>
+      <input type="number" id="id_cliente" name="id_cliente" required>
+      <br>
+
+      <label for="fecha_pedido">Fecha de Pedido:</label>
+      <input type="date" id="fecha_pedido" name="fecha_pedido" required>
+      <br>
+
+      <label for="total">Total:</label>
+      <input type="number" step="0.01" id="total" name="total" required>
+      <br>
+
+      <label for="estado">Estado:</label>
+      <input type="text" id="estado" name="estado" required>
+      <br>
+
+      <input type="submit" value="Agregar Pedido">
+    </form>
+
+ 
+    <form action="{{ url_for('modificar_pedidos') }}" method="POST">
+      <p>Ingresar un ID que corresponda a un pedido ya ingresado</p>
+      <label for="ID">ID:</label>
+      <input type="number" id="ID" name="ID" required>
+      <br>
+
+      <p>Modificar los campos:</p>
+      <label for="id_cliente">ID Cliente:</label>
+      <input type="number" id="id_cliente" name="id_cliente" required>
+      <br>
+
+      <label for="fecha_pedido">Fecha de Pedido:</label>
+      <input type="date" id="fecha_pedido" name="fecha_pedido" required>
+      <br>
+
+      <label for="total">Total:</label>
+      <input type="number" step="0.01" id="total" name="total" required>
+      <br>
+
+      <label for="estado">Estado:</label>
+      <input type="text" id="estado" name="estado" required>
+      <br>
+
+      <input type="submit" value="Modificar Pedido">
+    </form>
+
+    
+      <form action="{{ url_for('eliminar_pedidos') }}" method="POST">
+        <p>Ingresar un ID que corresponda a un pedido ya registrado</p>
+        <label for="id_pedido">ID Pedido:</label>
+        <input type="number" id="id_pedido" name="id_pedido" required>
+        <br>
+        <input type="submit" value="Eliminar Pedido">
+      </form>
+    </div>
+
+  <table class="tabla-estilo">
+    <th>ID</th>
+    <th>Clientes</th>
+    <th>Precio</th>
+    <th>Cantidad</th>
+    <th>fecha_pedido</th>
+    <h1>Lista de pedidos cargados:</h1>
+{% for pedidos in pedidos %}
+<tr>
+    {% for atributo in pedidos %}
+        <td>{{atributo}}</td>
+    {% endfor %}
+</tr>
+    
+{% endfor %}
+</table>
+</body>
+
+</html>

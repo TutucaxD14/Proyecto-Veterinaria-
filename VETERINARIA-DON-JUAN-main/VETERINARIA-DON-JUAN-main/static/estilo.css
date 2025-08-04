@@ -1,0 +1,105 @@
+/* Reset de márgenes y padding para todos los elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo general para el body */
+.body2 {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url('{{ url_for(static, filename=imagenes/Perro.jpg) }}') no-repeat center center fixed;
+    background-size: cover; /* Hace que la imagen ocupe todo el fondo */
+    color: white; /* Texto blanco para mejor contraste */
+    text-align: center;
+    padding: 20px;
+}
+
+/* Estilo para el Título */
+.Titulo h1 {
+    font-size: 3em; /* Tamaño grande */
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra de texto para destacar */
+    margin-bottom: 30px; /* Espacio debajo */
+}
+
+/* Estilo para los botones */
+.Boton {
+    margin: 20px 0;
+}
+
+/* Contenedor principal para el título y los botones */
+.contenedor-botones {
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo negro con 70% de transparencia */
+    padding: 30px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra */
+    display: inline-block; /* Ajusta el tamaño del contenedor al contenido */
+    text-align: center; /* Centra el contenido */
+    color: white; /* Asegura que el texto sea blanco */
+}
+
+/* Ajusta el espaciado del título dentro del contenedor */
+.contenedor-botones .Titulo h1 {
+    margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+/* Ajusta la posición para centrar el cuadro en la pantalla */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Cubre toda la pantalla */
+    margin: 0;
+    background: url('{{ url_for('static', filename='imagenes/FONDO.png') }}') no-repeat center center fixed;
+    background-size: cover; /* Asegura que la imagen cubra el fondo */
+
+.Boton button {
+    background-color: rgba(0, 140, 186, 0.8); /* Fondo azul semi-transparente */
+    border: none;
+    color: white;
+    padding: 15px 40px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.Boton button:hover {
+    background-color: #006f8f; /* Fondo más oscuro */
+    transform: scale(1.05); /* Efecto de aumento */
+}
+
+/* Estilo para los botones de enlace */
+.Boton a {
+    display: inline-block;
+    margin: 20px;
+    text-decoration: none; /* Elimina el subrayado */
+}
+
+/* Estilo para el pie de página */
+footer {
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semi-transparente */
+    color: white;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+.logo-derecha {
+    position: absolute; /* Permite posicionar con coordenadas */
+    top: 20px; /* Espaciado desde la parte superior */
+    right: 20px; /* Espaciado desde la derecha */
+    max-width: 120px; /* Ajusta el tamaño si es necesario */
+    height: auto; 
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Clientes - Veterinaria Don Juan</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='imagenes/Logo.png') }}">
+    
+
+  </head>
+  <body style="background: url('{{ url_for('static', filename='imagenes/FONDO.png') }}') no-repeat center center fixed; background-size: cover;">
+
+    <header>    
+      <img src="{{ url_for('static', filename='imagenes/Logo.png') }}"class="logo-derecha">
+  </header>
+  
+    <div class="contenedor-botones">
+      <div class="Titulo">
+        <h1>Veterinaria Don Juan</h1>
+      </div>
+      <div class="Boton">
+        <a href="{{ url_for('pedidos')}}">
+          <button>Pedidos</button>
+        </a>
+        <a href="{{ url_for('clientes')}}">
+          <button>Clientes</button>
+        </a>
+        <a href="{{ url_for('productos')}}">
+          <button>Productos</button>
+        </a>
+      </div>
+    </div>
+  </body>
+  <footer>
+
+
+
+
+  </footer>
+
+  </html>
